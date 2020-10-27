@@ -1,0 +1,106 @@
+:root {
+    --color-blue: linear-gradient(rgb(84 136 255), rgb(38 99 186));
+    --color-white: white;
+    --color-gray: rgb(26, 26, 26);
+    --color-green: #21b63a;
+    --color-text: rgba(0, 0, 0, 0.849);
+    --shadow: 0 0 55px 56px #0000002e;
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+}
+
+:global(html),
+:global(body) {
+    margin: 0 auto;
+} 
+
+:global(body) {
+    min-width: 100vw;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--color-blue);
+}
+
+:global(button),
+:global(input),
+:global(a) {
+    appearance: none;
+    border-radius: .5rem;
+    padding: .5rem;
+    border-width: 1px;
+    border-style: solid;
+    margin: .5rem 0;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.offset {
+    margin-left: -.5rem;
+}
+
+.faint {
+    opacity: .6;
+}
+
+.button {
+    appearance: none;
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 0 1rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray);
+    border-width: 0;
+    height: 3rem;
+
+    & > span {
+        margin-right: .5rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.app { 
+    margin: 1rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 750px;
+    box-shadow: var(--shadow);
+    color: var(--color-text);
+    background: var(--color-white);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.intro {
+    margin-bottom: 3rem;
+}
+
+.link-field {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-top: .25rem;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.loader {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.preview {
+    margin-top: 3rem;
+}
