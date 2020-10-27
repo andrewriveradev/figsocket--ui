@@ -1119,6 +1119,8 @@ var app = (function () {
     	return block;
     }
 
+    const API = "https://fig-socket-api.vercel.app/api";
+
     function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
@@ -1133,12 +1135,13 @@ var app = (function () {
     		$$invalidate(1, loading = true);
 
     		try {
-    			const response = await fetch(`/api/generate-endpoint?url=${encodeURIComponent(url)}`);
+    			console.log({ API });
+    			const response = await fetch(`${API}/generate-endpoint?url=${encodeURIComponent(url)}`);
     			$$invalidate(3, { endpoint } = await response.json(), endpoint);
     			$$invalidate(1, loading = false);
     			return fetchPreview();
-    		} catch(error) {
-    			console.log(error);
+    		} catch(err) {
+    			console.log(err);
     			error = true;
     			$$invalidate(1, loading = false);
     		}
@@ -1180,6 +1183,7 @@ var app = (function () {
     		loading,
     		preview,
     		endpoint,
+    		API,
     		generateEndpoint,
     		fetchPreview,
     		runDemo,
@@ -1223,7 +1227,7 @@ var app = (function () {
     	}
     }
 
-    const app = new App({
+    var app = new App({
       target: document.body
     });
 

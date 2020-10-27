@@ -79,25 +79,27 @@
     let preview = false;
     let endpoint = false;
 
-    const url = "https://fig-socket.vercel.app";
+    const API = "https://fig-socket-api.vercel.app/api";
 
     const generateEndpoint = async () => {
         error = false;
         loading = true;
 
         try {
-            const response = await fetch(`${url}/api/generate-endpoint?url=${encodeURIComponent(url)}`);
+            console.log({ API });
+            console.log(`${API}/generate-endpoint?url=${encodeURIComponent(url)}`);
+            const response = await fetch(`${API}/generate-endpoint?url=${encodeURIComponent(url)}`);
 
             ({ endpoint } = await response.json());
             loading = false;
 
-            return fetchPreview()
-        } catch(error) {
-            console.log(error);
+            return fetchPreview();
+        } catch(err) {
+            console.log(err);
             error = true;
             loading = false;
         }
-    }
+    };
 
     const fetchPreview = async () => {
         const response = await fetch(endpoint);
@@ -105,18 +107,18 @@
         const json = await response.json();
 
         return (preview = JSON.stringify(json, null, 4));
-    }
+    };
 
     const runDemo = () => {
         loading = true;
 
         url = "https://www.figma.com/file/EoIGjb8EwKbqjw7TRq5JUg/FigSocket?node-id=0%3A1";
         setTimeout(generateEndpoint, 500);
-    }
+    };
 
     const resetState = () => {
         error = false;
         loading = false;
         endpoint = false;
-    }
+    };
 </script>
