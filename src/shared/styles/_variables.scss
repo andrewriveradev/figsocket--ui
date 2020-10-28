@@ -1,0 +1,25 @@
+:root {
+    // -------- LAYERS --------
+    --z-half: 50;
+    --z-1: 100;
+    --z-2: 200;
+    --z-3: 300;
+    --z-4: 400;
+    --z-5: 500;
+    --z-6: 600;
+
+    // ---------- COLORS ----------
+    /* stylelint-disable color-no-hex */
+    --color-text: #131313;
+    --color-black: #080808;
+  
+
+    /* stylelint-disable color-no-hex */
+
+    // ------- SIZES -----------
+    --basespacer: 16px;
+    --font-p: 1.5rem;
+    --font-h1: 4.0625rem;
+    --font-h2: 3rem;
+    --font-h3: 1.625rem;
+}

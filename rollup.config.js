@@ -81,9 +81,9 @@ export default {
         alias({
             entries : [
                 { find : "shared", replacement : `./${INPUT_DIR}/shared` },
-                { find : "test", replacement : `./${INPUT_DIR}/test` },
-                { find : "shared", replacement : `./${INPUT_DIR}/shared` },
+                { find : "machines", replacement : `./${INPUT_DIR}/machines` },
                 { find : "views", replacement : `./${INPUT_DIR}/views` },
+                { find : "overlays", replacement : `./${INPUT_DIR}/overlays` },
             ],
         }),
         !production && livereload(`${OUTPUT_DIR}`),

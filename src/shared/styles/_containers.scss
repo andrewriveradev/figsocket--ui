@@ -1,0 +1,14 @@
+:root {
+    --nav-height: 10vh;
+}
+
+.view-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 500px;
+}

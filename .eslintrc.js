@@ -29,12 +29,12 @@ module.exports = {
 		indent: ["error", 4],
 		"linebreak-style": ["error", "windows"],
 		quotes: ["error", "double"],
-		semi: ["error", "always"],
+		semi: ["error", "always"], 
 		// Enforce newline consistency in objects
 		"object-curly-newline": [
 			"warn",
 			{
-				// Object literals w/ 3+ properties need to use newlines
+				// Object literals w/ 3+ properties `need to use newlines
 				ObjectExpression: {
 					consistent: true,
 					minProperties: 3
@@ -83,7 +83,7 @@ module.exports = {
 			{ blankLine: "any", prev: "import", next: "import" },
 
 			// Newline after var blocks
-			{ blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+ 			{ blankLine: "always", prev: ["const", "let", "var"], next: "*" },
 			{
 				blankLine: "any",
 				prev: ["const", "let", "var"],

@@ -1,0 +1,48 @@
+.btn {
+    &:focus {
+        box-shadow: 0 0 0 transparent;
+        outline: 0;
+    }
+    &:hover {
+        color: var(--text-white);
+    }
+}
+
+.btn-primary {
+    width: 15.75rem;
+    height: 4.3rem;
+    border: none;
+    background: var(--btn-primary);
+    border-radius: 4rem;
+    color: var(--text-white);
+
+    p {
+        font-size: var(--font-p);
+        margin: 0;
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+        border: 1px solid transparent;
+        background-color: var(--btn-primary);
+        box-shadow: 0 0 0 transparent;
+        color: var(--text-white);
+        outline: 0;
+    }
+}
+
+.btn-secondary {
+    border-color: var(--gold) !important;
+    background: var(--gold) !important;
+}
+
+.btn-light {
+    border-color: var(--light) !important;
+    background: var(--light) !important;
+}
+
+.btn-transparent {
+    border-color: transparent !important;
+    background: transparent !important;
+}

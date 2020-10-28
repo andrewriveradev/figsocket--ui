@@ -1,0 +1,22 @@
+@import 'lib/bootstrap/bootstrap';
+
+@import 'normalize';
+@import 'text';
+@import 'buttons';
+@import 'containers';
+@import 'variables';
+@import 'forms';
+
+html,
+body {
+    margin: 0 auto;
+}
+
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
