@@ -11,6 +11,7 @@ export default {
         RESET : ".start",
         RESULT : ".result",
     },
+
     states : {
         // Check local storage for previous result
         boot : {
@@ -19,20 +20,33 @@ export default {
 
         // Start screen
         start : component(import("views/start/start.svelte"), {
+            initial: "tab1",
+
             on : {
                 GENERATE : {
                     target : "generating",
 
                     actions : assign({
                         url : (_, { data : url }) => url,
-                    })
+                    }),
                 },
+
+                TAB_1 : ".tab1",
+                TAB_2 : ".tab2",
+            },
+
+            states : {
+                tab1 : component(import("shared/components/tab1.svelte")),
+                tab2 : component(import("shared/components/tab2.svelte")),
             }
         }),
 
         // Generating endpoint and getting preview
         generating : component(import("views/generating/generating.svelte"), {
             initial : "generate",
+
+            entry: raise("LOADER_SHOW"),
+            exit: raise("LOADER_HIDE"),
             
             on : {
                 GENERATE_COMPLETE : "result",

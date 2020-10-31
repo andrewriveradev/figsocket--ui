@@ -22,4 +22,7 @@
 <script>
 import { send } from "shared/actions.js";
 import { components } from "shared/service.js";
+
+$: console.log({ components : $components });
 </script>
+

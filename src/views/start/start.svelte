@@ -23,10 +23,18 @@
            </div>
         </div>
     </div>
+    <button on:click={() =>service.send("TAB_1")}>Tab 1</button>
+    <button on:click={() =>service.send("TAB_2")}>Tab 2</button>
+        
+    {#each components as { component, children, props}}
+        <svelte:component this={component.default} components={children}/>
+    {/each}
 </div>
 
 <script>
 import service from "shared/service.js";
+
+export let components;
 
 let url = "";
 

@@ -1,5 +1,5 @@
 import views from "./views.partial.js";
-import overlays from "./overlays.partial.js";
+import loader from "./loader.partial.js";
 
 export default {
     type : "parallel",
@@ -12,6 +12,6 @@ export default {
 
     states : {
         views,
-        overlays,
+        loader,
     },
 };

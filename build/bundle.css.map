@@ -2,11 +2,13 @@
   "version": 3,
   "file": "bundle.css",
   "sources": [
-    "..\\app.svelte"
+    "../loader.svelte",
+    "../app.svelte"
   ],
   "sourcesContent": [
-    "<style lang=\"scss\">.app {\n  background: white; }\n\n/*# sourceMappingURL=app.svelte.css.map */</style>\r\n\r\n<div class=\"app container justify-content-center mt-5 p-4\">\r\n    <div class=\"content\">\r\n        <div class=\"d-flex justify-content-between align-items-center pb-4\">\r\n            <h3 class=\"m-0\">FigSocket</h3>\r\n            <button use:send={\"RESET\"}>Reset</button>\r\n        </div>\r\n        <div class=\"view\">\r\n            {#each $components as { component, props, children } (component.default)}\r\n                <svelte:component this={component.default} components={children} {...props} />\r\n            {/each}\r\n        </div>\r\n        <div class=\"footer\">\r\n\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<script>\r\nimport { send } from \"shared/actions.js\";\r\nimport { components } from \"shared/service.js\";\r\n</script>"
+    "<div class=\"loader\"></div>\n\n<style>\n.loader {\n    background: red;\n    width: 100vw;\n    height: 100vh;\n    position: fixed;\n    left: 0;\n    top: 0;\n}\n</style>",
+    "<style lang=\"scss\">.app {\n  background: white; }\n\n/*# sourceMappingURL=app.svelte.css.map */</style>\n\n<div class=\"app container justify-content-center mt-5 p-4\">\n    <div class=\"content\">\n        <div class=\"d-flex justify-content-between align-items-center pb-4\">\n            <h3 class=\"m-0\">FigSocket</h3>\n            <button use:send={\"RESET\"}>Reset</button>\n        </div>\n        <div class=\"view\">\n            {#each $components as { component, props, children } (component.default)}\n                <svelte:component this={component.default} components={children} {...props} />\n            {/each}\n        </div>\n        <div class=\"footer\">\n\n        </div>\n    </div>\n</div>\n\n<script>\nimport { send } from \"shared/actions.js\";\nimport { components } from \"shared/service.js\";\n\n$: console.log({ components : $components });\n</script>\n\n"
   ],
   "names": [],
-  "mappings": "AAAmB,IAAI,cAAC,CAAC,AACvB,UAAU,CAAE,KAAK,AAAE,CAAC"
+  "mappings": "AAGA,OAAO,eAAC,CAAC,AACL,UAAU,CAAE,GAAG,CACf,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,KAAK,CACb,QAAQ,CAAE,KAAK,CACf,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,CAAC,AACV,CAAC;ACVkB,IAAI,cAAC,CAAC,AACvB,UAAU,CAAE,KAAK,AAAE,CAAC"
 }

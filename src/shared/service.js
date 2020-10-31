@@ -4,7 +4,7 @@ import { writable } from "svelte/store";
 import config from "machines/main.machine.js";
 import services from "machines/services/services.js";
 import guards from "machines/guards/guards.js";
- 
+
 const { service, components } = xcr({
     xstate : {
         config,
@@ -27,7 +27,7 @@ const tree = writable([],
         });
     }
 );
- 
+
 export default service;
 export {
     tree as components,
